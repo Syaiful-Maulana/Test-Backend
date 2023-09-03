@@ -4,6 +4,8 @@ use App\Http\Controllers\InventoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SalesController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,6 +20,7 @@ use App\Http\Controllers\ProductController;
 
 Route::resource('products', ProductController::class);
 Route::resource('inventories', InventoryController::class);
+Route::resource('sales', SalesController::class);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

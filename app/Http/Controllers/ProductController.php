@@ -75,7 +75,6 @@ class ProductController extends Controller
             $req = [
                 "name" => $variant->name,
                 "additional_price" => $variant->additional_price,
-
             ];
 
             $product->variants()->save($variant);
