@@ -1,7 +1,7 @@
 # API Test BackEnd Developer
 
 API dibuat berdasarkan lampiran proficiency test untuk Back End Web Developer yang dikirimkan melalui email.
-NB=Mohon untuk membuat toko terlebih dulu untuk mendapatkan key
+<b>NB = Mohon untuk membuat toko terlebih dulu untuk mendapatkan key </b>
 
 ## Instalasi
 
@@ -28,7 +28,7 @@ NB=Mohon untuk membuat toko terlebih dulu untuk mendapatkan key
 
     ```
 
-4. Dokumentasi
+4. Dokumentasi Postman
     ```bash
      https://documenter.getpostman.com/view/13146980/2s9Y5cug1m
     ```
