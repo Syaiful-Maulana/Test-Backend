@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inventory;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -10,7 +11,10 @@ class InventoryController extends Controller
 {
     private function isValidApiKey($apiKey)
     {
-        return $apiKey === 'client-adfasdf123sdfbadsftwkljlkjl';
+        $key = Shop::where('key', $apiKey)->first();
+        if($key != null){
+            return $apiKey === $key->key;
+        }
     }
     public function index(Request $request)
     {
@@ -127,7 +131,7 @@ class InventoryController extends Controller
         }
 
         $inventory = Inventory::find($id);
-        
+
         if (!$inventory) {
             return response()->json(['code' => 400,'error' => 'Not Found Data'], 400);
         }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Shop;
 use App\Models\Variant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -11,7 +12,10 @@ class ProductController extends Controller
 {
     private function isValidApiKey($apiKey)
     {
-        return $apiKey === 'client-adfasdf123sdfbadsftwkljlkjl';
+        $key = Shop::where('key', $apiKey)->first();
+        if($key != null){
+            return $apiKey === $key->key;
+        }
     }
 
     public function index(Request $request)
@@ -56,7 +60,6 @@ class ProductController extends Controller
 
         if($validasi->fails()){
             return response()->json(['code' => 422,'message' => $validasi->errors()->first()],422);
-
         }
 
         $product = new Product([

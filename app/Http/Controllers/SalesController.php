@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Sales;
+use App\Models\Shop;
 use App\Models\Variant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -15,7 +16,10 @@ class SalesController extends Controller
 {
     private function isValidApiKey($apiKey)
     {
-        return $apiKey === 'client-adfasdf123sdfbadsftwkljlkjl';
+        $key = Shop::where('key', $apiKey)->first();
+        if($key != null){
+            return $apiKey === $key->key;
+        }
     }
 
     public function index(Request $request)
