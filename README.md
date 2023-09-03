@@ -1,6 +1,6 @@
 # API Test BackEnd Developer
 
-API dibuat berdasarkan lampiran proficiency Test for Web Developer (Backend)
+API dibuat berdasarkan lampiran Proficiency Test for Web Developer (Backend)
 PT. DIYO SOLUSI DIGITAL yang dikirimkan melalui email. <br>
 <b>NB = Mohon untuk membuat toko terlebih dulu untuk mendapatkan key </b>
 
